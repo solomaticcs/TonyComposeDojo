@@ -13,17 +13,20 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.tonycomposedojo.ui.theme.TonyComposeDojoTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MessageCard(
-                Message(
-                    author = "Android",
-                    body = "Jetpack Compose"
+            TonyComposeDojoTheme {
+                MessageCard(
+                    Message(
+                        author = "Android",
+                        body = "Jetpack Compose"
+                    )
                 )
-            )
+            }
         }
     }
 }
@@ -52,10 +55,12 @@ fun MessageCard(message: Message) {
 @Preview
 @Composable
 fun PreviewMessageCard() {
-    MessageCard(
-        Message(
-            author = "Colleague",
-            body = "Hey, take a look at Jetpack Compose, it's great!"
+    TonyComposeDojoTheme {
+        MessageCard(
+            Message(
+                author = "Colleague",
+                body = "Hey, take a look at Jetpack Compose, it's great!"
+            )
         )
-    )
+    }
 }
